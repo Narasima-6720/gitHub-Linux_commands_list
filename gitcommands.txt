@@ -1,0 +1,19 @@
+git init
+git status
+git add filename
+git add .
+git add file1 file2 ...
+git commit -m "msg"
+git commit -m "msg" file1 file2
+git log
+git show commitid
+
+#Three stages
+
+1.Workspace
+2.Staging/Indexing
+3.Local Repo
+4.Remote Repo
+
+
+git clone <githuburl>

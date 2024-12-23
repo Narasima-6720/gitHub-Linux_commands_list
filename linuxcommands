@@ -11,3 +11,36 @@ Instantly create server
 
 Private key (handshake) Public Key
 
+Linux commands:
+
+whoami
+pwd
+sudo su - --> root user
+hostname--> servername
+hostnamectl set-hostname name
+hostname -I--> host ip
+=======================
+touch filename
+cd ..
+cd filename/direct
+mkdir foldername
+rm -rf filename
+ls 
+ls -lrth
+ls -la
+ll
+========================
+cat filename
+yum install <pkg-name>
+yum install java
+yum install docker
+date
+uptime
+cal
+cal 1947
+history
+===========================
+
+
+
+

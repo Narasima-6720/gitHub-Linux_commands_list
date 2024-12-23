@@ -17,3 +17,5 @@ git show commitid
 
 
 git clone <githuburl>
+git push 
+

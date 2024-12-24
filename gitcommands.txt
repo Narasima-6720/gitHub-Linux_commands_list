@@ -19,5 +19,59 @@ git show commitid
 git clone <githuburl>
 git push
 git pull --rebase #It fetches changes on local repo and apply  local changes on to top ,instead merging)
+git push origin -d branchname
+
+
+Hotfixbranch-> It is a temporary branch and to fix the issues and solve it 
+
+git checkout -b hotfix/<desc>
+
+git add .
+git commit -m "msg"
+git push origin hotfix/<desc>
+
+
+======================
+
+commit id(SHA-1 hash)
+
+branch
+================
+it is a separation
+It is a copy of data 
+
+git branch
+git branch branchname
+git branch -d branchname
+git branch -D branchname
+git checkout branchname
+git merge brnachname
+
+git push origin branchname
+=========================
+Editors
+
+vi/vim or nano
+
+touch filename
+vim filename
+esc --i(insert)
+========
+--data
+========
+
+esc:W
+esc:q
+esc:wq!
+
+
+=============
+
+git cherrypick commitid
+git log --oneline
+
+
+
+
 
 

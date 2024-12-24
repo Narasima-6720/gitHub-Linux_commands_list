@@ -17,5 +17,7 @@ git show commitid
 
 
 git clone <githuburl>
-git push 
+git push
+git pull --rebase #It fetches changes on local repo and apply  local changes on to top ,instead merging)
+
 

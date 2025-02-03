@@ -1,0 +1,300 @@
+bin execute commands for root and normal user 
+sbin execute commands for root only
+opt--> extra installed software application here only
+!number(to exeute previous command)
+history -d num (deletes permanently from history)
+uname(system info and kernel version)
+whoami
+pwd
+who
+mkdir (mkdir -v name)
+mkdir -p dir1/dir2(it helps to creates any no of children)
+top 
+ls
+  ls -a(to find hidden 
+  ls -l
+  ll
+  ls -h(human readable format)
+  ls -lrtha(list reverse table human readable format all)
+cd .. , cd -(previous directory)
+rmdir name(no subdir are present empty dir or  rm file deleted empty)
+rm -rf dirname
+touch fname
+  cat > filename 
+  
+file filename(to know file type)
+id
+group
+(hidden files start with .)
+Inode(each file has unique file number) 
+
+ls -lrthi
+
+Absolute path
+Relative path
+
+ File Editors
+
+vi(default),vim,nano 
+ save--> :wq
+	:q
+	:wq!
+cat filename(only output)
+cat -n filename(output with line numbers)
+> (insert into data into file) 
+
+Nullify the file
+
+> filename(remove data from file)
+
+Merge two files into single file
+
+cat file1 file2 > filename (copy two files data into single file)
+
+tac filename (reverse the content of file)
+
+head filename(first 10 lines)
+tail filename(last 10 lines)
+
+
+tail file1  -q file2 (first and second file sent to single file last 10 lines)
+(q -->skip the filename)
+
+Getting last 20 lines
+
+cat -n filename | head -n 120 | tail -n 20 
+
+sort filename(to sort file ASC)
+sort -r filename(descending order)
+=============================================
+sai 2344
+nara 4944
+amma  3000
+
+sort -k 2 filename(sorts data from 2 column)==> DISPLAY THE OUTPUT ONLY.
+sort -k <start_field>,<end_field> filename===>DISPLAY THE OUTPUT ONLY.
+
+==================
+Napkin AI(Tools)--> Diagrams,Content Creation
+============= 
+
+tree --> dir structure output
+
+=========Copy files=======
+
+cp source dest
+
+Rename the file
+
+mv oldfnme newfnme
+
+mv srcname destname(cut and paste)
+
+grep "string" filename
+grep -inB5 "string" fname(before 5 lines)
+grep -inA5 "string" fname(After 5 lines)
+grep -inC5 "string" fname(string is present bfore & after 5 lines display)
+
+
+grep -i "string" fname
+grep -ic "string" fname(count lines)
+grep -io "string" fname(only matched content will come)
+grep -in "string" fname(line number output)
+grep -iv "error" fname(display output without error content)
+
+ps -ef(bckg process)
+kill -9 pid
+
+========word count==========
+
+wc filename
+op:
+lines words characters filename
+wc -l fname
+wc -w fname
+wc -c fname
+
+| ( sends one command op to second cmd input)
+
+umask (default permissinsfor new files,dir)
+
+file permissions:
+r -4
+w-2
+x-1
+
+
+       umask  defaultfile   defaultdir
+
+
+root    0022   644        755  
+normal  0022   644        755
+
+base permission for file:0666
+		      (-)0022
+                     ============
+                        644
+
+
+base permission for dir:0777
+		      (-)0022
+			=======
+			755
+
+u-user
+g-group
+o-others
+a-all
+
+
+change umask 
+umask 0000
+
+chmod (change file permissions)
+chmod -R a-x folname/
+
+- remove permissions
++ add permissions
+
+
+production environment--> cust access application
+
+sudo chown root filename (to change owner) ONLY ROOT user can run)
+
+chgrp grpname filename (to change the group name)
+
+file filename(to find what type of file)
+diff file1 file2(to compare two files)
+=================
+soft link and hard link
+========================
+ln origfnme newfnnme (hard link)
+
+data is in sync
+inode is same
+hardlink only for the files
+org file delete we can access link file
+
+======================
+
+data is in sync
+
+ln -s sorucefnsm newfname
+inode different
+it is for both file and dir
+org file delete and link filedeleted
+
+==============================
+Vi editors shortcuts
+
+o -> new line
+k->up
+j->down
+x-> one char delete
+dw-> delet word
+dd->line deleted
+$->end of line moves
+p->paste the copy line
+P->paste above the line
+u->undo(retrieve back data)
+w->move cursor word by word
+nw->move cursor to n words
+nb->move cursor backword to nwords
+/-> search word in file
+
+:%s/searchstr/repstr/g(replace the match string)
+:%s/searchstr//g(replace with empty str)
+
+sed -i 's/name1/replacename/g' filename(entire change file automatically)
+tail -f filename(more interaction)
+
+========================
+Zip the files
+
+zip files.zip file1 file2 file3
+zip files.zip *(all file zip)
+zip -r file.zip folder/
+
+unzip file.zip
+
+getfacl filename(detail info about file)
+getent passwd username(to get password)
+
+==================
+under root user
+id username
+visudo(add new user in wheel group )
+usermod -aG wheel username(it helps to install applications)
+usermod -s /sbin/nologin username(No login permission to user)
+usermod -s /bin/bash username(login permission granted)
+
+======================Lock user============
+Due to long holidays
+
+usermod -L username(lock user)
+cat /etc/shadow(! or * --> lock indication)
+chage -l username
+chage username(chage pass expiration)
+usermod -U username(unlock user)
+
+
+==========================
+root id-0
+sys acc-(1-200)(allocated based on installed services)
+req user(1000+)
+============================
+groupadd name
+
+
+====Process=====
+tasklist
+jobs(ping google.com)
+kill %jobid(kill the job)
+ps
+ps aux(list all process)
+  x-bkg process
+   a-show processes for all users
+   u-user oriented format
+
+ps faux(tree like structure)
+top
+
+
+sleep 300 &
+uptime
+
+ping google.com(check for connectivity)
+======================
+	memory
+free
+free -h(human readable)
+=======pkgmanagement=============
+yum install pkgname -y
+wget path(to download from internet)
+============Service check===========
+Systemctl status httpd(/var/www/html/index.html)
+systemctl enable httpd
+systemctl stop httpd
+yum repolist(list the package]
+yum update -y(yellowdog updater,modified)
+yum info nginx
+===undo changes==========
+yum history undo number
+==============Networking====================
+ping(packet internet groper)
+---> checks connectivity of internet
+
+ping google.com -c10(send 10 packets)
+dig(domain information groper)
+--> get the domain information
+dig ns google.com(nameserver output)
+
+mtr domainname(how many no of hops it will went)
+traceroute domainname
+telnet domainname portnumber
+0-65536 port numbers
+
+ss--> port numbers displayed
+ifconfig
+
+
